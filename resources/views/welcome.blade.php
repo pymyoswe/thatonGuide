@@ -1,87 +1,47 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel Admin LTE</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+    <section id="home">
+        <div class="home-pattern"></div>
+        <div id="main-carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#main-carousel" data-slide-to="1"></li>
+                <li data-target="#main-carousel" data-slide-to="2"></li>
+            </ol><!--/.carousel-indicators-->
+            <div class="carousel-inner">
+                <div class="item active" style="background-image: url('himu/images/slider/slide3.jpg')">
+                    <div class="carousel-caption">
+                        <div>
+                            <h2 class="heading animated bounceInDown">'Himu' Onepage HTML Template</h2>
+                            <p class="animated bounceInUp">Fully Professional one page template</p>
+                            <a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a>
+                        </div>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel Admin LTE
+                <div class="item" style="background-image: url('himu/images/slider/slide2.jpg')">
+                    <div class="carousel-caption"> <div>
+                            <h2 class="heading animated bounceInDown">Get All in Onepage</h2>
+                            <p class="animated bounceInUp">Everything is outstanding </p> <a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="item" style="background-image: url('himu/images/slider/slide1.jpg')">
+                    <div class="carousel-caption">
+                        <div>
+                            <h2 class="heading animated bounceInRight">Fully Responsive Template</h2>
+                            <p class="animated bounceInLeft">100% Responsive HTML template</p>
+                            <a class="btn btn-default slider-btn animated bounceInUp" href="#">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.carousel-inner-->
+
+            <a class="carousel-left member-carousel-control hidden-xs" href="#main-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+            <a class="carousel-right member-carousel-control hidden-xs" href="#main-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
         </div>
-    </body>
-</html>
+
+    </section><!--/#home-->
+
+@endsection

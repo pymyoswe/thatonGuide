@@ -11,60 +11,41 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('himu/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('himu/css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{asset('himu/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('himu/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('himu/css/main.css')}}" rel="stylesheet">
+    <link href="{{asset('himu/css/responsive.css')}}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{asset('himu/images/ico/favicon.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('himu/images/ico/apple-touch-icon-144-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('himu/')}}images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('himu/images/ico/apple-touch-icon-72-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{asset('himu/images/ico/apple-touch-icon-57-precomposed.png')}}">
+
+    @yield('style')
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+    @include('layouts.preLoder')
 
-                    </ul>
+    @include('layouts.navBar')
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+    @yield('content')
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    @include('layouts.footer')
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('himu/js/html5shiv.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/smoothscroll.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/jquery.isotope.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/jquery.prettyPhoto.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/jquery.parallax.js')}}"></script>
+    <script type="text/javascript" src="{{asset('himu/js/main.js')}}"></script>
+
+    @yield('script')
 </body>
 </html>
